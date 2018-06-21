@@ -1,0 +1,22 @@
+schema {
+  query: RootQuery
+  mutation: Mutations
+}
+
+type Mutations {
+  changeUserName(newName: String, userId: ID): User
+}
+
+type RootQuery {
+  users: [User]
+  myUser(id: ID, name: String): Viewer
+}
+
+type User {
+  id: ID
+  name: String
+}
+
+type Viewer {
+  user: User
+}
